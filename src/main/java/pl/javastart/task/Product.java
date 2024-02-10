@@ -1,5 +1,7 @@
 package pl.javastart.task;
 
+import java.util.Objects;
+
 public class Product {
     String productName;
     double productPrice;
@@ -15,9 +17,9 @@ public class Product {
 
     @Override
     public String toString() {
-        return productName+
+        return productName +
                 ", cena: " + productPrice +
                 ", opis: " + productDescription +
-                ", kategoria: " + productCategory.categoryName;
+                ", kategoria: " + (Objects.nonNull(productCategory) ? productCategory.categoryName : "brak");
     }
 }
